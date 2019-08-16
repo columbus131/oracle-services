@@ -19,5 +19,10 @@ pipeline{
            echo 'stopping the Database' 
       }
   }
+    stage ('Applying Security Updates on Database Server'){
+      steps{
+           echo 'Patching the Database Server'
+      }
+    }
   }
 }
