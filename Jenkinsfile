@@ -30,7 +30,7 @@ pipeline{
                 echo 'Patching Completed'
            mail to: 'bramireddy@idirect.net',
              subject: "Patching Success : ${currentBuild.fullDisplayName}",
-             body: "Pactching Failed  ${env.BUILD_URL}"
+             body: "Pactching Completed on ERP Application  ${env.BUILD_URL}"
     }
      failure {
         mail to: 'bramireddy@idirect.net',
