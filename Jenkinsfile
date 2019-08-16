@@ -30,4 +30,11 @@ pipeline{
                 echo 'Patching Completed'
     }
   }
+  post {
+    failure {
+        mail to: 'bramireddy@idirect.net',
+             subject: "Failed Pipeline: ${currentBuild.fullDisplayName}",
+             body: "Pactching Failed  ${env.BUILD_URL}"
+    }
+}
 }
