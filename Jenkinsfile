@@ -8,7 +8,7 @@ pipeline{
       stage ('stopERPApplication'){
       steps{
            echo 'Stopping the Application Services' 
-           sh 'sudo cat /etc/redhat-release > relase.txt'
+           sh 'sudo cat /etc/redhat-release > release.txt'
            sh 'sudo su bramireddy /home/bramireddy/space.sh '
            sh  'ls -ltr'
            sh 'pwd > present.txt'
