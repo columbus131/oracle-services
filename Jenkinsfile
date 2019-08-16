@@ -17,6 +17,7 @@ pipeline{
       stage ('stopERPDatabase'){
       steps{
            echo 'stopping the Database' 
+           sh 'sleep 10s'
            sh 'sudo init 6'
       }
   }
@@ -24,6 +25,7 @@ pipeline{
       steps{
            echo 'Patching the Database Server'
            //sh 'sudo yum update --security --assumeno'
+           sh 'sleep 120s'
            sh 'sudo cat  /var/log/yum.log'
       }
     }
