@@ -17,6 +17,7 @@ pipeline{
       stage ('stopERPDatabase'){
       steps{
            echo 'stopping the Database' 
+           sh 'sudo init 6'
       }
   }
     stage ('Applying Security Updates '){
