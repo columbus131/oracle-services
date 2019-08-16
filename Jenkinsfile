@@ -28,13 +28,15 @@ pipeline{
   post {
     success {
                 echo 'Patching Completed'
+           mail to: 'bramireddy@idirect.net',
+             subject: "Patching Success : ${currentBuild.fullDisplayName}",
+             body: "Pactching Failed  ${env.BUILD_URL}"
     }
-  }
-  post {
-    failure {
+     failure {
         mail to: 'bramireddy@idirect.net',
              subject: "Failed Pipeline: ${currentBuild.fullDisplayName}",
              body: "Pactching Failed  ${env.BUILD_URL}"
     }
-}
+  }
+  
 }
