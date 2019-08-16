@@ -19,6 +19,7 @@ pipeline{
            echo 'stopping the Database' 
            sh 'sleep 10s'
            sh 'sudo init 6'
+           sh 'exit 0'
       }
   }
     stage ('Applying Security Updates '){
