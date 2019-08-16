@@ -11,7 +11,7 @@ pipeline{
            sh 'sudo cat /etc/redhat-release > release.txt'
            sh 'sudo su bramireddy /home/bramireddy/space.sh '
            sh  'ls -ltr'
-           sh 'pwd > present.txt'
+           sh 'pwd >> present.txt'
       }
       }
       stage ('stopERPDatabase'){
@@ -30,12 +30,12 @@ pipeline{
                 echo 'Patching Completed'
            mail to: 'bramireddy@idirect.net',
              subject: "Patching Success : ${currentBuild.fullDisplayName}",
-             body: "Pactching Completed on ERP Application  ${env.BUILD_URL}"
+             body: "Patching Completed on ERP Application  ${env.BUILD_URL}"
     }
      failure {
         mail to: 'bramireddy@idirect.net',
              subject: "Failed Pipeline: ${currentBuild.fullDisplayName}",
-             body: "Pactching Failed  ${env.BUILD_URL}"
+             body: "Patching Failed for some reason  ${env.BUILD_URL}"
     }
   }
   
