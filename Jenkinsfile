@@ -22,7 +22,7 @@ pipeline{
     stage ('Applying Security Updates '){
       steps{
            echo 'Patching the Database Server'
-           sh 'sudo grep -i "`date '+%b %d'`" /var/log/yum.log'
+           sh 'sudo grep -i "`date ''+'%b %d'`" /var/log/yum.log'
       }
     }
   }
