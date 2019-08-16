@@ -25,4 +25,9 @@ pipeline{
       }
     }
   }
+  post {
+    success {
+                echo 'Patching Completed'
+    }
+  }
 }
