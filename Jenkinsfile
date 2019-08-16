@@ -1,3 +1,4 @@
+
 pipeline{
   agent{
     label { label 'itcloudconfig' 
@@ -8,6 +9,7 @@ pipeline{
       steps{
            echo 'Stopping the Application Services' 
            sh 'sudo cat /etc/redhat-release > relase.txt'
+           sh 'sudo su bramireddy /home/bramireddy/space.sh '
            sh  'ls -ltr'
            sh 'pwd > present.txt'
       }
