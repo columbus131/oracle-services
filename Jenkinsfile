@@ -18,8 +18,7 @@ pipeline{
       steps{
            echo 'stopping the Database' 
            sh 'sleep 10s'
-           sh 'sudo init 6'
-           sh 'exit 1'
+           //sh 'exit 1'
       }
   }
     stage ('Applying Security Updates '){
@@ -28,6 +27,7 @@ pipeline{
            //sh 'sudo yum update --security --assumeno'
            sh 'sleep 120s'
            sh 'sudo cat  /var/log/yum.log'
+           sh 'sudo init 6'
       }
     }
   }
@@ -41,7 +41,7 @@ pipeline{
      failure {
         mail to: 'bramireddy@idirect.net',
              subject: "Failed Pipeline: ${currentBuild.fullDisplayName}",
-             body: "Patching Failed for some reason  ${env.BUILD_URL}"
+             body: "Patching Failed for some reason  ${env.BUILD_URL}/consoleText"
     }
   }
 }
