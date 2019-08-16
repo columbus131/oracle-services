@@ -8,7 +8,7 @@ pipeline{
       steps{
            echo 'Stopping the Application Services' 
            sh 'sudo cat /etc/redhat-release > relase.txt'
-           sh  'sudo su'
+           sh  'ls -ltr'
            sh 'pwd > present.txt'
       }
       }
