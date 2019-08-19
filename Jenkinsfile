@@ -27,7 +27,7 @@ pipeline{
            //sh 'sudo yum update --security --assumeno'
            //sh 'sleep 120s'
            sh 'sudo cat  /var/log/yum.log'
-           sh 'nohup sudo reboot &>/dev/null & exit'
+           //sh 'nohup sudo reboot &>/dev/null & exit'
       }
     }
   }
