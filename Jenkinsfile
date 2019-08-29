@@ -34,12 +34,14 @@ pipeline{
   post {
     success {
                 echo 'Patching Completed'
-           mail to: 'bramireddy@idirect.net',
+           mail from: 'noreply@alfred.idirect.net',
+             to: 'bramireddy@idirect.net',
              subject: "Patching Success : ${currentBuild.fullDisplayName}",
              body: "Patching Completed on ERP Application  ${env.BUILD_URL}/consoleText"
     }
      failure {
-        mail to: 'bramireddy@idirect.net',
+        mail from: 'noreply@alfred.idirect.net',
+             to: 'bramireddy@idirect.net',
              subject: "Failed Pipeline: ${currentBuild.fullDisplayName}",
              body: "Patching Failed for some reason  ${env.BUILD_URL}/consoleText"
     }
